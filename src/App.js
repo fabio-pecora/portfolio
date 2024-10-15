@@ -1,16 +1,16 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import { Routes, Route } from 'react-router-dom';  // Assuming you're using React Router
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';  
+import About from './components/About'; 
 
 function App() {
   return (
     <div>
-      <Navbar />  {/* Place Navbar at the top, so it's always visible */}
+      <Navbar />
       <Routes>
-        {/* Define your routes here */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* Add more routes as needed */}
+        <Route path="/" element={<Home />} />   {/* Use the imported Home component */}
+        <Route path="/about" element={<About />} /> {/* Use the imported About component */}
       </Routes>
     </div>
   );

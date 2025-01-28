@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <style>
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      background-size: 300% 300%;
+      animation: moveGradient 15s infinite alternate;
+      color: #ecf0f1;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      width: 80%;
+      max-width: 900px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      background: linear-gradient(45deg, #2980b9, #8e44ad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      font-size: 26px;
+      color: #ffffff;
+      margin-bottom: 30px;
+      font-weight: lighter;
+    }
+
+    p {
+      font-size: 18px;
+      color: #bdc3c7;
+      margin-bottom: 35px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a {
+      display: inline-block;
+      margin: 15px 20px;
+      padding: 14px 35px;
+      font-size: 16px;
+      color: #ffffff;
+      text-decoration: none;
+      border: 2px solid #ffffff;
+      border-radius: 30px;
+      transition: 0.3s ease-in-out;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    a:hover {
+      background: #ffffff;
+      color: #2c3e50;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      margin-top: 40px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Name</h1>
+    <h2>Welcome to My Elegant Portfolio</h2>
+    <p>Hi, I'm [Your Name], a passionate developer with expertise in [Your Specialization]. Explore my work, projects, and more.</p>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <a href="mailto:your.email@example.com">Contact Me</a>
+    <img src="images/yourimage.jpg" alt="Your Name" class="profile-image">
+  </div>
+</body>
+</html>

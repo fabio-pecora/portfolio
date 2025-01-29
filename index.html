@@ -1,117 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fabio's Portfolio</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabio Pecora | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Background Gradient Animation */
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-    @keyframes moveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+        /* Button Glow Animation */
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #00ffff; }
+            50% { box-shadow: 0 0 15px #00ffff; }
+            100% { box-shadow: 0 0 5px #00ffff; }
+        }
+
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #1e1e2f, #12122b, #0c1445);
+            background-size: 300% 300%;
+            animation: moveGradient 10s infinite alternate;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Container for all content */
+        .container {
+            background: rgba(40, 44, 52, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            width: 90%;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+
+        /* Headers */
+        h1 {
+            font-size: 36px;
+            letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #00ffff, #00aaff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        /* Image Styling */
+        .profile-pic {
+            width: 200px; /* Increase the size if needed */
+            height: 200px; /* Keep it equal to width for a perfect circle */
+            border-radius: 50%;
+            border: 4px solid #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+            object-fit: cover; /* Ensures the image does not stretch */
+}
+
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        .about, .projects {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            margin-top: 30px;
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            margin-top: 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 15px #00ffff;
+        }
+
+        /* Button Styling */
+        .view-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: #00ffff;
+            text-decoration: none;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .view-btn:hover {
+            background: #00ffff;
+            color: #000;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        .social-links {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-links a {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Glowing effect behind the icons */
+        .social-links a::before {
+            content: "";
+            position: absolute;
+            top: 42%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(151, 230, 227, 0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulseGlow 1.5s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
     }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #2c3e50, #34495e);
-      background-size: 300% 300%;
-      animation: moveGradient 15s infinite alternate;
-      color: #ecf0f1;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    100% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
     }
+}
 
-    .container {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 50px;
-      border-radius: 20px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      width: 80%;
-      max-width: 900px;
-      box-sizing: border-box;
-    }
+/* Social icons */
+.social-links a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
 
-    h1 {
-      font-size: 42px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      background: linear-gradient(45deg, #2980b9, #8e44ad);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 25px;
-    }
+.social-links a img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #00ffff);
+}
 
-    h2 {
-      font-size: 26px;
-      color: #ffffff;
-      margin-bottom: 30px;
-      font-weight: lighter;
-    }
 
-    p {
-      font-size: 18px;
-      color: #bdc3c7;
-      margin-bottom: 35px;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    a {
-      display: inline-block;
-      margin: 15px 20px;
-      padding: 14px 35px;
-      font-size: 16px;
-      color: #ffffff;
-      text-decoration: none;
-      border: 2px solid #ffffff;
-      border-radius: 30px;
-      transition: 0.3s ease-in-out;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    a:hover {
-      background: #ffffff;
-      color: #2c3e50;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-    }
-
-    .profile-image {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid #ffffff;
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-      margin-top: 40px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .profile-image:hover {
-      transform: scale(1.05);
-    }
-
-  </style>
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Fabio</h1>
-    <h2>Welcome to My  Portfolio</h2>
-    <p>Hi, I'm Fabio Pecora, a passionate developer with expertise in Software Engineering. Explore my work, projects, and more.</p>
-    <a href="https://www.linkedin.com/in/fabio-pecora-9a3535208/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/fabio-pecora" target="_blank">GitHub</a>
-    <a href="fabiopecora01@gmail.com">Contact Me</a>
-    <img src="images/fabio.PNG" alt="Fabio" class="profile-image">
+    <div class="container">
+        <h1>🚀 Welcome to My Portfolio 🚀</h1>
+        <h2>Fabio Pecora</h2>
+        <img src="images/fabio.PNG" alt="Fabio Pecora" class="profile-pic">
+        <p>Software Engineer | Problem Solver | Tech Enthusiast</p>
+    </div>
+
+    <div class="about">
+        <h2>About Me</h2>
+        <p>Hello! I’m Fabio, a passionate software engineer who loves tackling challenging problems and building innovative solutions. 
+           I specialize in web development, data science, and creating interactive applications.</p>
+    </div>
+
+    <div class="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Project 1: AI Chatbot</h3>
+            <p>An intelligent chatbot using Natural Language Processing and Python.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 2: Data Visualization Dashboard</h3>
+            <p>A sleek and dynamic dashboard to visualize real-time analytics.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 3: Portfolio Website</h3>
+            <p>The very website you're viewing right now! Built using HTML, CSS, and animations.</p>
+            <a href="#" class="view-btn">View Project</a>
+        </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/yourusername" target="_blank">
+          <img src="images/github.png" alt="GitHub">
+      </a>
+      <a href="https://twitter.com/yourhandle" target="_blank">
+          <img src="images/instagram.png" alt="Instagram">
+      </a>
   </div>
+
+  
 </body>
 </html>

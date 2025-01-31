@@ -12,143 +12,143 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-@keyframes spaceMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        @keyframes spaceMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: radial-gradient(circle, rgba(24, 36, 56, 1) 20%, rgba(5, 11, 26, 1) 100%);
-    animation: spaceMove 15s linear infinite;
-    background-size: 150% 150%;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden; /* Hide horizontal overflow */
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: auto; /* Ensures the page is scrollable */
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: radial-gradient(circle, rgba(24, 36, 56, 1) 20%, rgba(5, 11, 26, 1) 100%);
+            animation: spaceMove 15s linear infinite;
+            background-size: 150% 150%;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto; 
+            height: auto;
+        }
 
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none; /* Prevent interaction with particles */
-}
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none; 
+        }
 
-/* Glowing Button */
-.view-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    font-size: 18px;
-    color: #00ffff;
-    text-decoration: none;
-    border: 2px solid #00ffff;
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
-}
+        /* Glowing Button */
+        .view-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: #00ffff;
+            text-decoration: none;
+            border: 2px solid #00ffff;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
 
-/* Hover Effect */
-.view-btn:hover {
-    background-color: #00ffff;
-    color: #051b31;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6);
-    transform: scale(1.05);
-}
+        /* Hover Effect */
+        .view-btn:hover {
+            background-color: #00ffff;
+            color: #051b31;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
 
-button {
-  transition: all 0.001s ease-in-out; /* Faster hover effect */
-}
+        button {
+        transition: all 0.001s ease-in-out; /* Faster hover effect */
+        }
 
-.profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-    transform: scale(1);
-    transition: transform 0.5s ease-in-out;
-}
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            transform: scale(1);
+            transition: transform 0.5s ease-in-out;
+        }
 
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
-
-/* Container for logo (profile picture & name) */
-.logo-container {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 1;
-}
-
-.logo-container h1 {
-    margin-left: 10px;
-    font-size: 24px;
-}
-
-/* Social Links Icon Style */
-.social-links img {
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.7); /* White glow */
-}
-
-/* Hover Effect for All Social Links */
-.social-links img:hover {
-    box-shadow: 0px 0px 20px 8px rgba(255, 255, 255, 0.9); /* Bright white glow on hover */
-}
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
 
 
+        /* Container for logo (profile picture & name) */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+        }
 
-/* Project Cards */
-.project-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 12px;
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    margin-top: 15px;
-    transition: 0.5s ease-in-out;
-    box-shadow: 0px 0px 40px rgba(0, 255, 255, 0.6);
-}
+        .logo-container h1 {
+            margin-left: 10px;
+            font-size: 24px;
+        }
 
-.project-card:hover {
-    box-shadow: 0px 0px 80px rgba(0, 255, 255, 0.9);
-    transform: translateY(-10px);
-    background: rgba(0, 255, 255, 0.2);
-}
+        /* Social Links Icon Style */
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 4px rgba(255, 255, 255, 0.7); /* White glow */
+        }
 
-.projects {
-    margin-top: 30px;
-}
+        /* Hover Effect for All Social Links */
+        .social-links img:hover {
+            box-shadow: 0px 0px 20px 8px rgba(255, 255, 255, 0.9); /* Bright white glow on hover */
+        }
 
-/* Adding some margin for layout */
-.container {
-    text-align: center;
-}
 
-.welcome-text {
+
+        /* Project Cards */
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            margin-top: 15px;
+            transition: 0.5s ease-in-out;
+            box-shadow: 0px 0px 40px rgba(0, 255, 255, 0.6);
+        }
+
+        .project-card:hover {
+            box-shadow: 0px 0px 80px rgba(0, 255, 255, 0.9);
+            transform: translateY(-10px);
+            background: rgba(0, 255, 255, 0.2);
+        }
+
+        .projects {
+            margin-top: 30px;
+        }
+
+        /* Adding some margin for layout */
+        .container {
+            text-align: center;
+        }
+
+        .welcome-text {
             font-family: 'Quicksand', sans-serif;
             font-size: 3.5rem;
             font-weight: 500;
@@ -172,123 +172,116 @@ button {
             letter-spacing: 1px;
         }
 
-/* Glowing effect only for the GitHub icon */
-.github-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.6); /* Slight white glow for GitHub */
-}
+        /* Glowing effect only for the GitHub icon */
+        .github-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 12px 4px rgba(255, 255, 255, 0.6); /* Slight white glow for GitHub */
+        }
 
-/* Hover Effect for the GitHub icon */
-.github-icon:hover {
-    box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.8); /* Brighter white glow on hover */
-}
+        /* Hover Effect for the GitHub icon */
+        .github-icon:hover {
+            box-shadow: 0px 0px 18px 6px rgba(255, 255, 255, 0.8); /* Brighter white glow on hover */
+        }
 
-/* Glowing and animated text for subtitle */
-.container p {
-    font-size: 22px;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 400;
-    animation: glowingText 2s ease-in-out infinite alternate; /* Animation applied */
-}
+        /* Glowing and animated text for subtitle */
+        .container p {
+            font-size: 22px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            animation: glowingText 2s ease-in-out infinite alternate; /* Animation applied */
+        }
 
-/* Container for the logo */
-.project-card {
-    position: relative; /* Ensure logos are positioned relative to this container */
-}
+        /* Container for the logo */
+        .project-card {
+            position: relative; /* Ensure logos are positioned relative to this container */
+        }
 
-/* Style for the logo */
-.lang-logo {
-    position: absolute;
-    bottom: 10px;  /* Adjust distance from the bottom */
-    right: 10px;   /* Adjust distance from the right */
-    width: 50px;   /* Adjust size of the logo */
-    height: auto;
-    opacity: 0;    /* Hide the logo by default */
-    transition: opacity 0.3s ease-in-out;  /* Smooth transition for opacity */
-    z-index: 10;   /* Ensure the logo stays on top of other elements */
-}
+        /* Style for the logo */
+        .lang-logo {
+            position: absolute;
+            bottom: 10px;  /* Adjust distance from the bottom */
+            right: 10px;   /* Adjust distance from the right */
+            width: 50px;   /* Adjust size of the logo */
+            height: auto;
+            opacity: 0;    /* Hide the logo by default */
+            transition: opacity 0.3s ease-in-out;  /* Smooth transition for opacity */
+            z-index: 10;   /* Ensure the logo stays on top of other elements */
+        }
 
-/* Show logo when hovering over the project card */
-.project-card:hover .lang-logo {
-    opacity: 1; /* Show the logo on hover */
-}
+        /* Show logo when hovering over the project card */
+        .project-card:hover .lang-logo {
+            opacity: 1; /* Show the logo on hover */
+        }
 
-/* Optional: Adjust the cursor when hovering over the project card */
-.project-card:hover {
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-
-h4 {
-    margin-top: 0;       /* Remove default top margin */
-    margin-bottom: 20px; /* Add some space below */
-    font-size: 20px;     /* Adjust font size for h4 */
-    color: #3fe0ef;      /* Cool blue color */
-    font-style: italic;  /* Italicize for a stylish look */
-    letter-spacing: 1px; /* Add some space between letters */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    display: inline-block;  /* Ensure the text is treated as an inline block */
-}
-
-h4:hover {
-    color: #2979FF;      /* Change color to a deeper blue on hover */
-    text-shadow: 2px 2px 10px rgba(41, 121, 255, 0.7); /* Enhance shadow on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-    transform-origin: center; /* Ensure the scaling happens from the center */
-}
-
-h4 {
-    position: relative;
-    font-size: 24px;
-    display: inline-block;
-    cursor: none; /* Hide the default cursor */
-}
-
-h4::after {
-    content: '👆';  /* The cursor symbol */
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 30px;
-    animation: moveCursor 5s infinite alternate; /* Animation for cursor movement */
-}
-
-@keyframes moveCursor {
-    0% {
-        top: -10px;
-        left: -10px; /* Start top-left */
-    }
-    25% {
-        top: -10px;
-        left: 100%; /* Move to the top-right */
-    }
-    50% {
-        top: 100%; 
-        left: 100%; /* Move to bottom-right */
-    }
-    75% {
-        top: 100%;
-        left: -10px; /* Move to bottom-left */
-    }
-    100% {
-        top: -10px;
-        left: -10px; /* Return to top-left */
-    }
-}
+        /* Optional: Adjust the cursor when hovering over the project card */
+        .project-card:hover {
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
 
 
+        h4 {
+            margin-top: 0;       /* Remove default top margin */
+            margin-bottom: 20px; /* Add some space below */
+            font-size: 20px;     /* Adjust font size for h4 */
+            color: #3fe0ef;      /* Cool blue color */
+            font-style: italic;  /* Italicize for a stylish look */
+            letter-spacing: 1px; /* Add some space between letters */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+            display: inline-block;  /* Ensure the text is treated as an inline block */
+        }
 
+        h4:hover {
+            color: #2979FF;      /* Change color to a deeper blue on hover */
+            text-shadow: 2px 2px 10px rgba(41, 121, 255, 0.7); /* Enhance shadow on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+            transform-origin: center; /* Ensure the scaling happens from the center */
+        }
 
+        h4 {
+            position: relative;
+            font-size: 24px;
+            display: inline-block;
+            cursor: none; /* Hide the default cursor */
+        }
 
-</style>
+        h4::after {
+            content: '👆';  /* The cursor symbol */
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 30px;
+            animation: moveCursor 5s infinite alternate; /* Animation for cursor movement */
+        }
 
-
+        @keyframes moveCursor {
+            0% {
+                top: -10px;
+                left: -10px; /* Start top-left */
+            }
+            25% {
+                top: -10px;
+                left: 100%; /* Move to the top-right */
+            }
+            50% {
+                top: 100%; 
+                left: 100%; /* Move to bottom-right */
+            }
+            75% {
+                top: 100%;
+                left: -10px; /* Move to bottom-left */
+            }
+            100% {
+                top: -10px;
+                left: -10px; /* Return to top-left */
+            }
+        }
+    </style>
 </head>
 <body>
 

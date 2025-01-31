@@ -78,13 +78,16 @@
         }
 
         .profile-pic {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-            transform: scale(1);
-            transition: transform 0.5s ease-in-out;
-        }
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
 
         .profile-pic:hover {
             transform: scale(1.1);
@@ -144,19 +147,19 @@
         }
 
         .container {
-    width: 100%;
-    padding: 40px 15px; /* Adjust padding for a balanced look */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(2px); /* Smooth blur effect */
-    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2)); 
-    border-radius: 20px; /* Softer edges */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Light depth effect */
-    max-width: 900px; /* Ensures it's not too wide */
-    margin: 50px auto; /* Centers it nicely */
-}
+            width: 100%;
+            padding: 40px 15px; /* Adjust padding for a balanced look */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px); /* Smooth blur effect */
+            background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.2)); 
+            border-radius: 20px; /* Softer edges */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Light depth effect */
+            max-width: 900px; /* Ensures it's not too wide */
+            margin: 50px auto; /* Centers it nicely */
+        }
 
 
         .welcome-text {
@@ -295,6 +298,12 @@
             animation: moveCursor 5s infinite alternate; /* Animation for cursor movement */
         }
 
+        .logo {
+            width: 200px;  /* Adjust this to make it even smaller */
+            height: auto;  /* Maintains aspect ratio */
+        }
+
+
         @keyframes moveCursor {
             0% {
                 top: -10px;
@@ -317,6 +326,8 @@
                 left: -10px; /* Return to top-left */
             }
         }
+
+        
     </style>
 </head>
 <body>
@@ -326,13 +337,14 @@
 
     <!-- Logo Section (Profile Pic & Name) -->
     <div class="logo-container">
-        <img src="images/fabio.jpeg" alt="Fabio Pecora" class="profile-pic">
-        <h1>Fabio Pecora</h1>
+        <img src="images/logo.png " alt="logo" class="profile-pic">
     </div>
+    
 
     <div class="container">
         <h2 class="welcome-text">Welcome to My Portfolio</h2>
         <p class="subtitle">Software Engineer | Master Student</p>
+        <img src="images/fabio.jpeg" alt="Fabio Pecora" class="logo">
     </div>
     
     

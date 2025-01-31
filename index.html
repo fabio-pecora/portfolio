@@ -143,25 +143,47 @@
             margin-top: 30px;
         }
 
-        /* Adding some margin for layout */
         .container {
+            width: 80%;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #074c53, #18656d, #18656d, #3e96a0, #18656d, #074c53);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin: 30px auto;
+            max-width: 800px;
             text-align: center;
         }
 
         .welcome-text {
             font-family: 'Quicksand', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 500;
-            color: #004b6d;
             text-transform: uppercase;
-            letter-spacing: 3px; /* More letter-spacing for a spacious feel */
-            background: linear-gradient(90deg, #6a98b7, #4b97b9); /* Gradient background */
-            -webkit-background-clip: text;
-            color: transparent;
-            padding: 20px;
-            margin-bottom: 20px; /* More space below the title */
-            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            letter-spacing: 2px;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px; /* Space between title and subtitle */
         }
+
+        .subtitle {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.5rem; /* Slightly smaller than title */
+            font-weight: 400;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        
 
         /* Subtitle Style */
         .container p {
@@ -294,11 +316,11 @@
         <h1>Fabio Pecora</h1>
     </div>
 
-    <!-- Welcome Message -->
     <div class="container">
-        <h2 class="welcome-text"><span> Welcome to My Portfolio </span></h2>
-        <p text>Software Engineer | Master Student</p>
+        <h2 class="welcome-text">Welcome to My Portfolio</h2>
+        <p class="subtitle">Software Engineer | Master Student</p>
     </div>
+    
     
 
     <div class="projects">

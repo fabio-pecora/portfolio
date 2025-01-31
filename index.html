@@ -181,6 +181,24 @@
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+        .projects-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3.2rem; /* Large but balanced */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #3e96a0, #64d6e7); /* Subtle gradient text */
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+            padding: 10px 0;
+            margin-bottom: 15px;
+            text-align: center; /* Ensures it's centered */
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3); /* Subtle underline */
+            display: inline-block;
+        }
+
+
 
 
         
@@ -324,8 +342,8 @@
     
 
     <div class="projects">
-        <h1>Projects</h1>
-        <h4>Hover over the projects to see the programming languages used!</h4>
+        <h1 class="projects-title">Projects</h1> <br>
+        <!-- <h4>Hover over the projects to see the programming languages used!</h4> -->
         <div class="project-card">
             <h3>Microsoft Immigration Research🌍</h3>
             <p>Replication study at Microsoft, building upon existing research by verifying its findings and extending its scope through the introduction of novel features.</p>

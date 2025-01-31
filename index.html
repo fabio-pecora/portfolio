@@ -10,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <style>
-        /* Cosmic Background Animation */
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 @keyframes spaceMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -147,32 +148,29 @@ button {
     text-align: center;
 }
 
-/* Shiny Text Effect for Welcome Message */
 .welcome-text {
-    font-size: 36px;
-    text-align: center;
-    font-weight: bold;
-    color: #00ffff;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-}
+            font-family: 'Quicksand', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 500;
+            color: #004b6d;
+            text-transform: uppercase;
+            letter-spacing: 3px; /* More letter-spacing for a spacious feel */
+            background: linear-gradient(90deg, #6a98b7, #4b97b9); /* Gradient background */
+            -webkit-background-clip: text;
+            color: transparent;
+            padding: 20px;
+            margin-bottom: 20px; /* More space below the title */
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
 
-.welcome-text::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #00ffff, #fff, #00ffff);
-    animation: shine 4.0s infinite;
-}
-
-.welcome-text span {
-    position: relative;
-    z-index: 1;
-}
+        /* Subtitle Style */
+        .container p {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
 
 /* Glowing effect only for the GitHub icon */
 .github-icon {
@@ -191,22 +189,40 @@ button {
 /* Glowing and animated text for subtitle */
 .container p {
     font-size: 22px;
-    color: #2f15d6;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 400;
     animation: glowingText 2s ease-in-out infinite alternate; /* Animation applied */
 }
 
+/* Container for the logo */
+.project-card {
+    position: relative; /* Ensure logos are positioned relative to this container */
+}
+
+/* Style for the logo */
 .lang-logo {
     position: absolute;
-    bottom: 10px; /* Adjust distance from the bottom */
-    right: 10px;  /* Adjust distance from the right */
-    width: 50px;  /* Adjust size of the logo */
+    bottom: 10px;  /* Adjust distance from the bottom */
+    right: 10px;   /* Adjust distance from the right */
+    width: 50px;   /* Adjust size of the logo */
     height: auto;
-    z-index: 10; /* Ensure the logo is in front of other elements */
-    opacity: 1; /* Ensure the logo is fully visible */
+    opacity: 0;    /* Hide the logo by default */
+    transition: opacity 0.3s ease-in-out;  /* Smooth transition for opacity */
+    z-index: 10;   /* Ensure the logo stays on top of other elements */
 }
+
+/* Show logo when hovering over the project card */
+.project-card:hover .lang-logo {
+    opacity: 1; /* Show the logo on hover */
+}
+
+/* Optional: Adjust the cursor when hovering over the project card */
+.project-card:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
 
 h4 {
     margin-top: 0;       /* Remove default top margin */
@@ -227,28 +243,52 @@ h4:hover {
     transform-origin: center; /* Ensure the scaling happens from the center */
 }
 
+h4 {
+    position: relative;
+    font-size: 24px;
+    display: inline-block;
+    cursor: none; /* Hide the default cursor */
+}
 
+h4::after {
+    content: '👆';  /* The cursor symbol */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    animation: moveCursor 5s infinite alternate; /* Animation for cursor movement */
+}
 
-/* Glowing effect on text */
-@keyframes glowingText {
+@keyframes moveCursor {
     0% {
-        text-shadow: 0 0 10px #ffffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff;
+        top: -10px;
+        left: -10px; /* Start top-left */
+    }
+    25% {
+        top: -10px;
+        left: 100%; /* Move to the top-right */
+    }
+    50% {
+        top: 100%; 
+        left: 100%; /* Move to bottom-right */
+    }
+    75% {
+        top: 100%;
+        left: -10px; /* Move to bottom-left */
     }
     100% {
-        text-shadow: 0 0 20px #ffffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
+        top: -10px;
+        left: -10px; /* Return to top-left */
     }
 }
 
 
-@keyframes shine {
-    100% {
-        left: 100%;
-    }
-}
 
 
 
 </style>
+
+
 </head>
 <body>
 
@@ -263,14 +303,14 @@ h4:hover {
 
     <!-- Welcome Message -->
     <div class="container">
-        <h2 class="welcome-text"><span>🚀 Welcome to My Portfolio 🚀</span></h2>
-        <p>Software Engineer | Master Student</p>
+        <h2 class="welcome-text"><span> Welcome to My Portfolio </span></h2>
+        <p text>Software Engineer | Master Student</p>
     </div>
     
 
     <div class="projects">
         <h1>Projects</h1>
-        <h4>Hover project to see programming language used!</h4>
+        <h4>Hover over the projects to see the programming languages used!</h4>
         <div class="project-card">
             <h3>Microsoft Immigration Research🌍</h3>
             <p>Replication study at Microsoft, building upon existing research by verifying its findings and extending its scope through the introduction of novel features.</p>
@@ -376,7 +416,7 @@ h4:hover {
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 1,
+                        "speed": 0.5,
                         "opacity_min": 0.1
                     }
                 },
@@ -385,7 +425,7 @@ h4:hover {
                     "random": true,
                     "anim": {
                         "enable": true,
-                        "speed": 40,
+                        "speed": 20,
                         "size_min": 0.1
                     }
                 },
@@ -398,7 +438,7 @@ h4:hover {
                 },
                 "move": {
                     "enable": true,
-                    "speed": 6,
+                    "speed": 3,
                     "direction": "none",
                     "random": false,
                     "straight": false,

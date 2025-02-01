@@ -189,33 +189,111 @@
                 background-position: 100% 100%;
             }
         }
-    </style>
-</head>
-<body>
 
 
 
-        /* Music Section */
+        /* music */
+
+
+        /* Music Section with Cool Effects */
         .music {
-            background: linear-gradient(135deg, #8e44ad, #5a2a7d);
+            background: linear-gradient(45deg, rgba(0, 255, 0, 1), rgba(0, 200, 0, 1));
+            background-size: 400% 400%;
+            animation: gradientAnimation 6s ease infinite;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section {
-                height: auto;
-                padding: 40px;
-                font-size: 20px;
-            }
+        /* Animated Gradient Background */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-            .terminal {
-                width: 80%;
-                font-size: 14px;
+        .music h2 {
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 200, 0, 1), 0 0 30px rgba(0, 150, 0, 1);
+        }
+
+        .music p {
+            font-size: 20px;
+            margin-top: 10px;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 1), 0 0 10px rgba(0, 200, 0, 1);
+        }
+
+        /* Spotify Button Styling */
+        .spotify-button {
+            background-color: #1db954; /* Spotify Green */
+            color: white;
+            padding: 12px 24px;
+            font-size: 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .spotify-button:hover {
+            background-color: #1ed760; /* Light green on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .spotify-icon {
+            width: 24px;
+            height: 24px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Spotify_Logo_2015.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        /* Animated Musical Notes */
+        .music-notes {
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            font-size: 50px;
+            animation: moveNotes 3s linear infinite;
+        }
+
+        @keyframes moveNotes {
+            0% {
+                top: 10%;
+                left: 5%;
+            }
+            50% {
+                top: 20%;
+                left: 10%;
+            }
+            100% {
+                top: 10%;
+                left: 5%;
             }
         }
+
     </style>
 </head>
 <body>
+
 
     <!-- School & Work Section (Terminal Look) -->
     <div class="section school">
@@ -241,12 +319,22 @@
     </div>
 
 
-    <!-- Music Section -->
-    <div class="section music">
-        <div>
-            <h2>Music</h2>
-            <p>My connection with sound and rhythm</p>
-        </div>
+     <!-- Music Section -->
+     <div class="section music">
+        <h2>Music</h2>
+        <p>Let the rhythm move you!</p>
+
+        <!-- Spotify Button -->
+        <a href="https://spotify.com" target="_blank">
+            <button class="spotify-button">
+                <span class="spotify-icon"></span>
+                Listen on Spotify
+            </button>
+        </a>
+
+        <!-- Animated Musical Notes -->
+        <div class="music-notes">🎶🎵🎶</div>
+
     </div>
 
     <script>

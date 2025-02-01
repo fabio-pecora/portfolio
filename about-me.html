@@ -3,267 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Fabio Pecora</title>
+    <title>About Me</title>
     <style>
-        /* General Reset */
-        body {
-            font-family: 'Arial', sans-serif;
+        /* Reset Styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
         }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
+        body {
+            background-color: #f5f5f5;
             text-align: center;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
+        /* Section Base Styles */
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 33vh; /* Each section takes up a third of the viewport height */
             color: white;
-            text-decoration: none;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
             font-weight: bold;
         }
 
-        nav ul li a:hover {
-            text-decoration: underline;
+        /* Terminal-Style School & Work Section */
+        .school {
+            background-color: black;
+            color: #00ff00; /* Terminal green text */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
-        footer {
-            text-align: center;
+        /* Fake Terminal Border */
+        .terminal {
+            width: 80%;
+            max-width: 700px;
+            background-color: rgba(0, 0, 0, 0.9);
+            border: 2px solid #00ff00;
             padding: 20px;
-            background-color: #333;
-            color: white;
+            box-shadow: 0 0 15px #00ff00;
+            text-align: left;
+            white-space: pre-line;
+            position: relative;
         }
 
-        /* Nerdy Section */
-        body {
-      font-family: 'Courier New', monospace;
-      background-color: black;
-      color: #00ff00;
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* Blinking Cursor */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background-color: #00ff00;
+            margin-left: 5px;
+            animation: blink 0.8s infinite;
+        }
 
-    .terminal {
-      border: 2px solid #00ff00;
-      padding: 20px;
-      width: 60%;
-      height: 60%;
-    }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
 
-    #output {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
+        /* Typewriter Animation */
+        .terminal-text {
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+            white-space: pre;
+            overflow: hidden;
+            border-right: 2px solid #00ff00;
+            display: inline-block;
+            animation: typing 3s steps(40, end) forwards, blink-border 0.8s infinite;
+        }
 
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
 
+        @keyframes blink-border {
+            50% { border-color: transparent; }
+        }
 
+        /* Basketball Section */
+        .basketball {
+            background: linear-gradient(135deg, #e67e22, #b84300);
+        }
 
-        /* Basketball Section (Modern Design) */
-/* Basketball Section (Modern Text Styling) */
-.basketball {
-    background: url('images/basketball-icon.avif') repeat;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 12px;
-    margin-bottom: 60px;
-    box-shadow: 0 12px 30px rgba(255, 95, 0, 0.3); /* Soft shadow for depth */
-    position: relative;
-    overflow: hidden;
-    animation: fadeIn 2s ease-out;
-    font-family: 'Poppins', sans-serif; /* Clean and modern font */
-}
-
-/* Inner content background (light background for text) */
-.basketball .content {
-    background-color: rgba(255, 255, 255, 0.85); /* Light background for text */
-    padding: 40px 30px;
-    border-radius: 10px;
-    color: #333;
-    max-width: 800px; /* Restrict width for card-like appearance */
-    margin: 0 auto;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    animation: fadeInText 1.5s ease-out forwards;
-}
-
-/* Heading Styling - Super Modern */
-.basketball h2 {
-    font-size: 3.2em; /* Larger font size for boldness */
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700; /* Bold weight for a more solid header */
-    color: #ffcc00; /* Bright yellow for contrast */
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Strong text shadow for better visibility */
-    margin-bottom: 20px;
-    letter-spacing: 2px; /* Slightly increased letter-spacing for a sleek effect */
-    line-height: 1.4;
-    text-transform: uppercase; /* Make it uppercase for a stronger look */
-    animation: slideIn 1.5s ease-out;
-}
-
-/* Paragraph Styling - Clean, Modern, and Readable */
-.basketball p {
-    font-size: 1.35em; /* Slightly larger text size for better readability */
-    line-height: 1.8;
-    color: #333; /* Darker text for contrast */
-    margin-bottom: 20px;
-    padding: 0 15px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
-    animation: fadeInText 1.5s ease-out forwards;
-    letter-spacing: 0.5px;
-}
-
-/* Image Styling */
-.basketball .basketball-img {
-    width: 120px;
-    margin-top: 30px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 95, 0, 0.7); /* Soft glow around image */
-    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
-}
-
-/* Hover effect for image */
-.basketball .basketball-img:hover {
-    transform: scale(1.1); /* Slightly enlarge image on hover */
-}
-
-/* Add a fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Text fade-in effect */
-@keyframes fadeInText {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Slide-in effect for the header */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
-        
+        /* Music Section */
         .music {
-            background-color: #1db954;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 50px;
-            box-shadow: 0 0 15px rgba(29, 185, 84, 0.6);
+            background: linear-gradient(135deg, #8e44ad, #5a2a7d);
         }
 
-        .music h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-family: 'Arial', sans-serif;
-        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                height: auto;
+                padding: 40px;
+                font-size: 20px;
+            }
 
-        .music p {
-            font-size: 18px;
-            line-height: 1.6;
+            .terminal {
+                width: 90%;
+            }
         }
-
-        .music .spotify-logo {
-            width: 120px;
-            margin-top: 20px;
-            filter: brightness(0) invert(1);
-            box-shadow: 0 0 15px rgba(29, 185, 84, 0.8);
-        }
-
     </style>
 </head>
 <body>
-    
-    <!-- Introduction Section (Nerdy) -->
-    <section class="intro">
-        <h2>Hi, I'm Fabio Pecora!</h2>
-        <div class="typing-container">
-            <span id="typed-text"></span>
+
+    <!-- School & Work Section (Terminal Look) -->
+    <div class="section school">
+        <div class="terminal">
+            <p class="terminal-text">
+                Initializing system...
+                Loading School & Work info...
+                Access granted.
+                
+                Welcome to Fabio's Terminal.
+
+                User: Fabio Pecora
+                Age: 23 years old
+                Origin: Italy
+                Role: Student & Software Engineer Intern
+                Experience: Cuny Tech Prep, Microsoft Intern, Software Engineer Intern
+            </p>
+            <span class="cursor"></span>
         </div>
-        <img src="images/nerd.jpg" alt="nerd" class="profile-pic">
-        <p>I’m a software engineer and a master's student with a passion for solving problems with technology. I’ve worked on various projects, both in school and through different programs. I specialize in full-stack development and data science. I enjoy learning and applying new technologies to create solutions!</p>
-    </section>
-    
-    
-    
-    
-    <!-- Basketball Section (Basketball Theme) -->
-    <section class="basketball">
-        <h2>Passion for Basketball</h2>
-        <p>I've been passionate about basketball for years! Whether playing in local leagues or watching the NBA, basketball has always been a huge part of my life. The energy, teamwork, and strategy of the game inspire me, and I bring that same energy to my work!</p>
-        <img src="" alt="Basketball" class="basketball-img"> <!-- You can replace with a real image -->
-    </section>
-    
-    <!-- Music Section (Spotify Theme) -->
-    <section class="music">
-        <h2>Passion for Music</h2>
-        <p>Music is another huge part of my life. I love exploring new genres and artists, and I often find inspiration through music. It’s not just background noise for me; it’s a powerful force that drives my creativity.</p>
-        <img src="images/spotify-logo.png" alt="Spotify Logo" class="spotify-logo"> <!-- Replace with the actual Spotify logo -->
-    </section>
-    
-    <footer>
-        <p>Copyright &copy; 2025 Fabio Pecora</p>
-    </footer>
-    <script>
-        const text = `Hello! I'm a software engineer and a master's student with a passion for solving problems with technology.
-    I've worked on various projects, both in school and through different programs.
-    I specialize in full-stack development and data science.
-    I enjoy learning and applying new technologies to create solutions!`;
-    
-        let i = 0;
-        const speed = 50; // Adjust the typing speed here
-        const output = document.getElementById("output");
-    
-        function typeWriter() {
-          if (i < text.length) {
-            output.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-          }
-        }
-    
-        window.onload = typeWriter;
-      </script>
-    
+    </div>
+
+    <!-- Basketball Section -->
+    <div class="section basketball">
+        <div>
+            <h2>Basketball</h2>
+            <p>The sport that fuels my passion</p>
+        </div>
+    </div>
+
+    <!-- Music Section -->
+    <div class="section music">
+        <div>
+            <h2>Music</h2>
+            <p>My connection with sound and rhythm</p>
+        </div>
+    </div>
+
 </body>
 </html>

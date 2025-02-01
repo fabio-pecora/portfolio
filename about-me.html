@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <style>
+
         /* Reset Styles */
         * {
             margin: 0;
@@ -33,6 +34,55 @@
             position: relative;
             overflow: hidden;
         }
+
+
+/* About Me Section */
+.about-me {
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(20, 20, 20, 0.9)); /* Dark gradient effect */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7); /* Intense shadow for depth */
+    border-radius: 25px;
+    animation: pulseGlow 5s ease-in-out infinite alternate; /* Glowing pulse effect */
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+
+/* About Me Title */
+.about-me h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    animation: textGlowBlack 3s infinite alternate; /* Glowing neon text effect */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.6); /* Soft white glow */
+}
+
+/* Glowing Pulse Animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 12px 50px rgba(0, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 18px 70px rgba(0, 0, 0, 0.8), 0 22px 90px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Glowing Text Animation */
+@keyframes textGlowBlack {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
+    }
+}
 
         /* Terminal-Style School & Work Section */
         .school {
@@ -77,6 +127,8 @@
         }
 
         /* Basketball Section with Cool Effects */
+        
+        /* Basketball Section */
         .basketball {
             background: linear-gradient(45deg, rgba(255, 165, 0, 1), rgba(255, 69, 0, 1));
             background-size: 400% 400%;
@@ -92,14 +144,43 @@
             padding: 20px;
         }
 
-        /* Animated Gradient Background */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        .basketball-image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35vw; /* Adjust as needed */
+            height: 70vh; /* Adjust as needed */
+            background-image: url('path-to-your-image.jpg');
+            background-size: contain; /* Use 'contain' instead of 'cover' */
+            background-position: center;
+            z-index: 5;
         }
 
-        .basketball h2 {
+
+        .left-image {
+            left: 0;
+            background-image: url('https://res.cloudinary.com/jerrick/image/upload/v1647134407/622d46c6b16911001fa03cc7.jpg'); /* Replace with the actual image URL */
+        }
+
+        .right-image {
+            right: 0;
+            background-image: url('https://cdn.sanity.io/images/c1chvb1i/production/d0a403245ca502a07bf1c6a35787df46ce54a405-1100x735.jpg'); /* Replace with the actual image URL */
+        }
+
+        /* Text Container with Opacity Background */
+        .text-container {
+            background: rgba(0, 0, 0, 0.5); /* Black background with some opacity */
+            padding: 20px;
+            border-radius: 15px; /* Slight rounded corners */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            max-width: 80%;
+            margin-bottom: 20px;
+            z-index: 10; /* Ensure it stays in front of the emojis */
+        }
+
+        /* Text Styling */
+        .text-container h2 {
             font-size: 50px;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -109,97 +190,41 @@
             text-shadow: 0 0 10px rgba(255, 165, 0, 1), 0 0 20px rgba(255, 165, 0, 1), 0 0 30px rgba(255, 69, 0, 1);
         }
 
-        .basketball p {
+        .text-container p {
             font-size: 20px;
             margin-top: 10px;
             text-shadow: 0 0 5px rgba(255, 69, 0, 1), 0 0 10px rgba(255, 69, 0, 1);
         }
 
-        /* Bouncing Basketball Animation */
-        .basketball-ball {
-            font-size: 60px;
-            position: absolute;
-            animation: bounceBall 3s ease-in-out infinite;
-        }
 
-        /* Left Bouncing Ball */
-        .left-ball {
-            left: 10%;
-            animation: bounceBallLeft 3s ease-in-out infinite;
-        }
-
-        /* Right Bouncing Ball */
-        .right-ball {
-            right: 10%;
-            animation: bounceBallRight 3s ease-in-out infinite;
-        }
-
-        @keyframes bounceBallLeft {
-            0% {
-                transform: translateY(0) scale(1);
-            }
-            25% {
-                transform: translateY(-100px) scale(1.2); /* Bounce up */
+        /* Bouncing Animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
             }
             50% {
-                transform: translateY(0) scale(1);
-            }
-            75% {
-                transform: translateY(-80px) scale(1.1); /* Slight bounce */
-            }
-            100% {
-                transform: translateY(0) scale(1);
+                transform: translateY(-30px);
             }
         }
 
-        @keyframes bounceBallRight {
-            0% {
-                transform: translateY(0) scale(1);
-            }
-            25% {
-                transform: translateY(-100px) scale(1.2); /* Bounce up */
-            }
-            50% {
-                transform: translateY(0) scale(1);
-            }
-            75% {
-                transform: translateY(-80px) scale(1.1); /* Slight bounce */
-            }
-            100% {
-                transform: translateY(0) scale(1);
-            }
-        }
+        /* Animated Gradient Background */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+}
 
-        /* Animated Basketball Court Lines */
-        .court-lines {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, transparent 10%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 0, 0.3) 50%);
-            background-size: 20px 20px;
-            animation: moveLines 2s linear infinite;
-            z-index: 0;
-        }
-
-        @keyframes moveLines {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
 
 
 
         /* music */
 
 
-        /* Music Section with Cool Effects */
+        /* Music Section - Crazy Vibe */
         .music {
-            background: linear-gradient(45deg, rgba(0, 255, 0, 1), rgba(0, 200, 0, 1));
+            background: radial-gradient(circle, #ff00ff, #00ffff, #ff6600, #ff0066);
             background-size: 400% 400%;
-            animation: gradientAnimation 6s ease infinite;
+            animation: colorShift 10s ease infinite;
             position: relative;
             overflow: hidden;
             color: white;
@@ -208,92 +233,88 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
 
-        /* Animated Gradient Background */
-        @keyframes gradientAnimation {
+        /* Background Color Animation */
+        @keyframes colorShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        /* Neon Text Effect */
         .music h2 {
-            font-size: 50px;
+            font-size: 60px;
             text-transform: uppercase;
             letter-spacing: 5px;
-            background: linear-gradient(90deg, #1db954, #1ed760);
+            background: linear-gradient(90deg, #ff0066, #ff6600, #ff00ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 200, 0, 1), 0 0 30px rgba(0, 150, 0, 1);
+            text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff0066, 0 0 45px #ff6600;
         }
 
-        .music p {
-            font-size: 20px;
-            margin-top: 10px;
-            text-shadow: 0 0 5px rgba(0, 255, 0, 1), 0 0 10px rgba(0, 200, 0, 1);
-        }
-
-        /* Spotify Button Styling */
-        .spotify-button {
-            background-color: #1db954; /* Spotify Green */
-            color: white;
-            padding: 12px 24px;
-            font-size: 20px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .spotify-button:hover {
-            background-color: #1ed760; /* Light green on hover */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .spotify-icon {
-            width: 24px;
-            height: 24px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Spotify_Logo_2015.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        /* Animated Musical Notes */
-        .music-notes {
+        /* Animated Soundwave */
+        .soundwave {
+            width: 100%;
+            height: 50px;
             position: absolute;
-            top: 10%;
-            left: 5%;
-            font-size: 50px;
-            animation: moveNotes 3s linear infinite;
+            bottom: 0;
+            left: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/music-notes.png');
+            animation: waveAnimation 1.5s infinite linear;
         }
 
-        @keyframes moveNotes {
+        @keyframes waveAnimation {
             0% {
-                top: 10%;
-                left: 5%;
-            }
-            50% {
-                top: 20%;
-                left: 10%;
+                transform: translateX(0);
             }
             100% {
-                top: 10%;
-                left: 5%;
+                transform: translateX(-100%);
             }
         }
 
-    </style>
-</head>
+        .spotify-button {
+        background: #1db954;
+        color: white;
+        padding: 15px 30px;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;  /* This centers the text horizontally and vertically */
+        gap: 12px;
+        margin-top: 25px;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+        text-transform: uppercase;
+        white-space: nowrap; /* Prevents text from wrapping */
+    }
+
+    .spotify-button:hover {
+        background: #1ed760;
+        box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+        transform: scale(1.1);
+    }
+
+    .spotify-icon {
+        width: 30px;
+        height: 30px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+        </style>
+    </head>
 <body>
 
+        <!-- About Me Section -->
+    <div class="about-me">
+        <h1>About Me</h1>
+    </div>
 
     <!-- School & Work Section (Terminal Look) -->
     <div class="section school">
@@ -304,36 +325,40 @@
     </div>
 
     <!-- Basketball Section -->
-    <div class="section basketball">
-        <h2>Basketball</h2>
-        <p>The sport that fuels my passion</p>
 
-        <!-- Animated Basketball Court Lines -->
-        <div class="court-lines"></div>
+<div class="section basketball">
+    <!-- Left Basketball Image -->
+    <div class="basketball-image left-image"></div>
 
-        <!-- Left Bouncing Basketball Emoji -->
-        <div class="basketball-ball left-ball">🏀</div>
-
-        <!-- Right Bouncing Basketball Emoji -->
-        <div class="basketball-ball right-ball">🏀</div>
+    <!-- Text Container with Opacity Background -->
+    <div class="text-container">
+        <h2>Basketball Lover</h2>
+        <p>The sport I played since I was 4</p>
     </div>
 
+    <!-- Right Basketball Image -->
+    <div class="basketball-image right-image"></div>
 
-     <!-- Music Section -->
-     <div class="section music">
-        <h2>Music</h2>
-        <p>Let the rhythm move you!</p>
+    <!-- Animated Basketball Court Lines -->
+    <div class="court-lines"></div>
+</div>
+
+
+
+    <!-- Music Section -->
+    <div class="section music">
+        <h2>ADDICTED TO MUSIC!</h2>
+        <p>check my spotify</p>
 
         <!-- Spotify Button -->
         <a href="https://spotify.com" target="_blank">
             <button class="spotify-button">
                 <span class="spotify-icon"></span>
-                Listen on Spotify
+                Listen Now
             </button>
         </a>
-
-        <!-- Animated Musical Notes -->
-        <div class="music-notes">🎶🎵🎶</div>
+        <!-- Animated Soundwave -->
+        <div class="soundwave"></div>
 
     </div>
 

@@ -18,7 +18,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        
+
 
 
         body {
@@ -80,14 +80,34 @@
         }
 
         .profile-pic {
-    width: 85px;
-    height: 85px;
-    clip-path: polygon(50% 0%, 100% 15%, 100%, 50% 100%, 0% 82%, 0% 18%);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
-    transform: scale(1);
-    transition: transform 0.5s ease-in-out;
-    filter: drop-shadow(0px 0px 30px rgba(255, 255, 150, 0.8)); /* Glowing effect */
-}
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .about-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+            text-decoration: none;
+        }
+
+        .about-btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+            transform: scale(1.05);
+        }
 
 
 
@@ -347,11 +367,15 @@
     
 
     <div class="container">
-        <h2 class="welcome-text">Welcome to My Portfolio</h2>
+        <h1 class="welcome-text">Welcome to My Portfolio</h1>
         <p class="subtitle">Software Engineer | Master Student</p>
-        <img src="images/fabio.png" alt="Fabio Pecora" class="logo">
+        
+        <!-- Profile Picture -->
+        <img src="images/fabio.png" alt="Fabio Pecora" class="profile-pic">
+        
+        <!-- About Me Button -->
+        <a href="https://fabio-pecora.github.io/portfolio/about-me" class="about-btn">About Me</a>
     </div>
-    
     
 
     <div class="projects">

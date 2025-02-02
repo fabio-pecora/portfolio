@@ -356,104 +356,122 @@
             font-style: italic;
         }
 
-        /* Food Cards Container */
-        .food-cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+        /* Food Section Styles */
+.section.food {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #f8f4f0; /* Light food-themed background */
+    overflow: hidden;
+}
 
-        /* Individual Food Card */
-        .food-card {
-            width: 350px;
-            height: 450px;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-        }
+/* Food Background */
+.food-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('path_to_food_texture_image.jpg') repeat center center;
+    opacity: 0.1;
+    z-index: -1;
+}
 
-        .food-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
+/* Food Pattern Animation */
+.food-pattern {
+    background: url('path_to_pattern_image.png') repeat;
+    animation: move-pattern 5s infinite linear;
+}
 
-        /* Background image and overlay */
-        .food-card-image {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            transition: opacity 0.3s ease;
-            border-radius: 20px;
-        }
+@keyframes move-pattern {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
 
-        .food-card-image:hover {
-            opacity: 0.9;
-        }
+/* Food Text Container */
+.food-text-container {
+    text-align: center;
+    color: #4b4b4b;
+    font-family: 'Arial', sans-serif;
+    z-index: 10;
+}
 
-        /* Content Overlay */
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 0 0 20px 20px;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+.food-text-container h2 {
+    font-size: 36px;
+    color: #ff6347; /* Tomato color to give it an appetizing vibe */
+    margin-bottom: 10px;
+}
 
-        .food-card:hover .overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
+.food-text-container p {
+    font-size: 18px;
+    color: #555;
+}
 
-        .overlay h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
+/* Interactive Food Items */
+.food-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
 
-        .overlay p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+.food-item {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .btn {
-            background: #32c787;
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 50px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
+.food-item.pizza {
+    background-image: url('path_to_pizza_image.jpg');
+}
 
-        .btn:hover {
-            background: #28a68e;
-            transform: scale(1.05);
-        }
+.food-item.sushi {
+    background-image: url('path_to_sushi_image.jpg');
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .food-cards-container {
-                flex-direction: column;
-                align-items: center;
-            }
+.food-item.burger {
+    background-image: url('path_to_burger_image.jpg');
+}
 
-            .food-card {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-        }
+/* Hover Effects for Food Items */
+.food-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Info Text */
+.hover-info {
+    text-align: center;
+    margin-top: 40px;
+    opacity: 0;
+    animation: show-hover-text 2s forwards;
+}
+
+@keyframes show-hover-text {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hover-info .hover-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .food-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-item {
+        margin-bottom: 20px;
+    }
+}
+
 
         </style>
     </head>
@@ -509,45 +527,32 @@
         <div class="soundwave"></div>
 
     </div>
-    <!-- Food and Cooking Section -->
-    <!-- Food and Cooking Section -->
-    <section class="food-cooking-section">
-        <div class="header">
-            <h1>Gastronomy Like Never Before</h1>
-            <p>Delight in mouthwatering experiences: Carbonara, Pizza, and Seafood, crafted to perfection.</p>
+   <!-- Food Section -->
+    <div class="section food">
+        <!-- Food Background with Dynamic Pattern -->
+        <div class="food-background">
+            <div class="food-pattern"></div>
         </div>
 
-        <div class="food-cards-container">
-            <div class="food-card">
-                <div class="food-card-image" style="background-image: url('https://www.w3schools.com/w3images/carbonara.jpg');">
-                    <div class="overlay">
-                        <h2>Carbonara</h2>
-                        <p>Rich, creamy, and full of flavor. A classic!</p>
-                        <button class="btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="food-card">
-                <div class="food-card-image" style="background-image: url('https://www.w3schools.com/w3images/pizza.jpg');">
-                    <div class="overlay">
-                        <h2>Pizza</h2>
-                        <p>Fresh, cheesy, and perfectly baked to satisfy all cravings.</p>
-                        <button class="btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="food-card">
-                <div class="food-card-image" style="background-image: url('https://www.w3schools.com/w3images/seafood.jpg');">
-                    <div class="overlay">
-                        <h2>Seafood Feast</h2>
-                        <p>Fresh from the ocean, delivered to your table. Taste the best of the sea.</p>
-                        <button class="btn">Order Now</button>
-                    </div>
-                </div>
-            </div>
+        <!-- Text Container with Food Vibes -->
+        <div class="food-text-container">
+            <h2>Food Lover</h2>
+            <p>Exploring flavors and recipes is my passion. Here's a taste of my culinary journey!</p>
         </div>
+
+        <!-- Interactive Food Items -->
+        <div class="food-items">
+            <div class="food-item pizza"></div>
+            <div class="food-item sushi"></div>
+            <div class="food-item burger"></div>
+        </div>
+
+        <!-- Hover Effect for Interactive Food Items -->
+        <div class="hover-info">
+            <p class="hover-text">Hover to explore different tastes!</p>
+        </div>
+    </div>
+
     </section>
 
         <script>

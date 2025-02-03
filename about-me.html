@@ -37,6 +37,7 @@
 
 
 /* About Me Section */
+/* About Me Section */
 .about-me {
     position: relative;
     padding: 50px 20px;
@@ -49,6 +50,28 @@
     background-clip: padding-box;
     overflow: hidden;
 }
+
+/* Styling for the back link (arrow) */
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker when hovered */
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Subtle glowing shadow */
+}
+
 
 /* About Me Title */
 .about-me h1 {
@@ -390,12 +413,16 @@
 
         </style>
     </head>
-<body class = "background-color">
+    <body class = "background-color">
 
         <!-- About Me Section -->
     <div class="about-me">
+        <a href="index.html" class="back-link">
+            ⬅️ Back to Projects
+        </a>
         <h1>About Me</h1>
     </div>
+
 
     <!-- School & Work Section (Terminal Look) -->
     <div class="section school">
@@ -473,7 +500,7 @@
                                         User: Fabio Pecora  
                                         Age: 23 years old
                                         Role: Student & SWE Intern
-                                        Experience: Cuny Tech Prep, Microsoft, New York Concrete
+                                        Experience: Microsoft, Cuny Tech Prep, NYCC
 
                                         Passions: ⬇️`;
 
@@ -485,7 +512,7 @@
                     if (index < terminalText.length) {
                         terminalElement.innerHTML += terminalText[index];
                         index++;
-                        setTimeout(typeEffect, 50); // Adjust speed here (lower = faster)
+                        setTimeout(typeEffect, 10); // Adjust speed here (lower = faster)
                     } else {
                         cursorElement.style.display = "inline-block"; // Show cursor after typing
                     }

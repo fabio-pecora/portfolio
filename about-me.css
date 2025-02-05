@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #f5f5f5;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 33vh; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-me {
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 1), rgba(20, 20, 20, 0.9));
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    animation: pulseGlow 5s ease-in-out infinite alternate; 
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.about-me h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    animation: textGlowBlack 3s infinite alternate;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 12px 50px rgba(0, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 18px 70px rgba(0, 0, 0, 0.8), 0 22px 90px rgba(255, 255, 255, 0.5);
+    }   
+}
+
+@keyframes textGlowBlack {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.5);
+    }
+}
+
+.school {
+    background-color: black;
+    color: #00ff00; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.terminal {
+    width: 110%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    padding: 15px; /* Smaller padding */
+    box-shadow: 0 0 10px #00ff00;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    font-size: 16px; 
+    line-height: 1.0;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background-color: #00ff00;
+    margin-left: 5px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.basketball {
+    background: linear-gradient(45deg, rgba(255, 165, 0, 1), rgba(255, 69, 0, 1));
+    background-size: 400% 400%;
+    animation: gradientAnimation 6s ease infinite;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.basketball-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35vw;
+    height: 70vh; 
+    background-image: url('path-to-your-image.jpg');
+    background-size: contain; 
+    background-position: center;
+    z-index: 5;
+}
+
+.left-image {
+    left: 0;
+    background-image: url('https://res.cloudinary.com/jerrick/image/upload/v1647134407/622d46c6b16911001fa03cc7.jpg'); 
+}
+
+.right-image {
+    right: 0;
+    background-image: url('https://cdn.sanity.io/images/c1chvb1i/production/d0a403245ca502a07bf1c6a35787df46ce54a405-1100x735.jpg'); 
+}
+
+.text-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    max-width: 80%;
+    margin-bottom: 20px;
+    z-index: 10; 
+}
+
+.text-container h2 {
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 1), 0 0 20px rgba(255, 165, 0, 1), 0 0 30px rgba(255, 69, 0, 1);
+}
+
+.text-container p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 0 0 5px rgba(255, 69, 0, 1), 0 0 10px rgba(255, 69, 0, 1);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.music {
+    background: radial-gradient(circle, #ff00ff, #00ffff, #ff6600, #ff0066);
+    background-size: 400% 400%;
+    animation: colorShift 10s ease infinite;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.music h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #ff0066, #ff6600, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff0066, 0 0 45px #ff6600;
+}
+
+.soundwave {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/music-notes.png');
+    animation: waveAnimation 1.5s infinite linear;
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.spotify-button {
+    background: #1db954;
+    color: white;
+    padding: 15px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;  
+    gap: 12px;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    text-transform: uppercase;
+    white-space: nowrap; 
+}
+
+.spotify-button:hover {
+    background: #1ed760;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.spotify-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.section.food {
+    position: relative;
+    padding: 50px 20px;
+    background: url('https://img.freepik.com/premium-photo/cute-cartoon-food-illustrations-repeating-pattern_14117-890730.jpg') repeat; 
+    background-size: 200px 100px; 
+    background-position: top left;
+    height: 30vh;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.food-text-container {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    max-width: 80%; 
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.food-text-container h2 {
+    font-size: 36px;
+    color: #ff6347; 
+    margin-bottom: 10px;
+}
+
+.food-text-container p {
+    font-size: 18px;
+    color: #333; 
+}
+
+.food-items {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.food-item {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.background-color {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+        .food-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-item {
+        margin-bottom: 20px;
+    }
+}
